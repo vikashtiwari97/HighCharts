@@ -1,17 +1,15 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts/highstock';
 import HC_accessibility from 'highcharts/modules/accessibility';
 HC_accessibility(Highcharts);
 import drilldown from 'highcharts/modules/drilldown';
 drilldown(Highcharts);
-
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-pie',
+  templateUrl: './pie.component.html',
+  styleUrls: ['./pie.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'charts';
+export class PieComponent implements OnInit {
   chartOptions: any;
   highcharts: typeof Highcharts = Highcharts;
 
@@ -26,7 +24,7 @@ export class AppComponent implements OnInit {
   barChart(){
     this.chartOptions = {
       chart:{
-        type:'column'
+        type:'pie'
       },
       title:{
         align : 'left',
@@ -343,16 +341,4 @@ export class AppComponent implements OnInit {
     }
     }
   }
-
-  // chartData = [
-  //   {
-  //     name: 'ONLINE',
-  //     data: [690, 770, 3200, 700, 320, 4300],
-  //     color: '#311056'
-  //   },{
-  //     name: 'POS',
-  //     data: [450, 970, 1200, 1700, 4900, 1250],
-  //     color: '#489EC1'
-  //   }
-  // ]
 }
